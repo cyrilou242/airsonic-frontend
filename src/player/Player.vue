@@ -1,5 +1,5 @@
 <template>
-  <div :class="{'visible': visible}" class="player elevated d-flex">
+  <div :class="{'visible': visible}" class="player elevated d-flex sticky-bottom">
     <div class="flex-fill">
       <!-- Progress --->
       <div class="progress2" @click="seek">
@@ -91,10 +91,12 @@
     height: 0;
     max-height: 0;
     transition: max-height 0.5s;
+
   }
   .visible {
     height: auto;
     max-height: 100px;
+    z-index: 2000;
   }
 </style>
 <script lang="ts">
