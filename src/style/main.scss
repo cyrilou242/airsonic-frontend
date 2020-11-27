@@ -63,6 +63,14 @@ h1, h2, h3, h4, h5 {
   box-shadow: none !important;
 }
 
+.playListDragOver {
+  background: $body-bg;
+}
+
+.dragOverable {
+  display:block;;
+}
+
 @import './nav';
 @import './table';
 
