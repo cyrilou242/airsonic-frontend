@@ -14,10 +14,10 @@
     </router-link>
 
     <router-link v-for="item in playlists" :key="item.id"
-                 :to="{name: 'playlist', params: { id: item.id }}"
-                 class="nav-link">
-      <span @dragover="onDragover" @drop="onDrop(item.id, $event)">
-        <Icon icon="music-note-list" class="mr-2" /> {{ item.name }}
+                 :to="{name: 'playlist', params: { id: item.id}}"
+                 class="nav-link" :class="{playListDragOver: item.id === activeId }" >
+      <span @dragover="onDragover(item.id, $event)" @dragleave="onDragleave(item.id, $event)" @drop="onDrop(item.id, $event)" class="dragOverable">
+        <Icon icon="music-note-list" class="mr-2" /> {{ item.name }} <Icon style="float:right;" icon="plus" class="mr-2" v-if="item.id === activeId"/>
       </span>
     </router-link>
 
@@ -45,6 +45,7 @@
       return {
         playlistName: '',
         showModal: false,
+        activeId: '',
       }
     },
     computed: {
@@ -64,8 +65,13 @@
         const trackId = event.dataTransfer.getData('id')
         return this.$store.dispatch('addTrackToPlaylist', { playlistId, trackId })
       },
-      onDragover(event: any) {
+      onDragover(playlistId: string, event: any) {
         event.preventDefault()
+        this.activeId = playlistId
+      },
+      onDragleave(playlistId: string, event: any) {
+        event.preventDefault()
+        this.activeId = ''
       },
     }
   })
