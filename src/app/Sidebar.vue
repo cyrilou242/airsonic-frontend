@@ -21,11 +21,12 @@
 <style>
   .sidebar-container nav {
     padding-top: 0.5rem;
+    padding-bottom: 5.5rem;
   }
   .sidebar-container .sidebar-fixed {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    padding-bottom: 180px;
+    padding-bottom: 2rem;
     width: 250px;
   }
 
