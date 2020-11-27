@@ -39,7 +39,7 @@ const setupRootModule = (authService: AuthService, api: API): Module<State, any>
     },
     setPlaylists(state, playlists: any[]) {
       state.playlists = playlists
-        .sort((a: any, b: any) => b.changed.localeCompare(a.changed))
+        .sort((a: any, b: any) => b.changed ? b.changed.localeCompare(a.changed) : -1)
     },
     removePlaylist(state, id: string) {
       state.playlists = state.playlists.filter(p => p.id !== id)
