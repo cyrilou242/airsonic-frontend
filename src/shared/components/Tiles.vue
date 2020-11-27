@@ -1,5 +1,5 @@
 <template functional>
-  <div class="mt-5 tiles" :class="props.square ? 'tiles-square' : 'tiles-rect'">
+  <div class="tiles" :class="props.square ? 'tiles-square' : 'tiles-rect'">
     <slot />
   </div>
 </template>
