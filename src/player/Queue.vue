@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-5">
     <TrackList :tracks="tracks">
       <template #context-menu="{index}">
         <b-dropdown-item-button @click="remove(index)">

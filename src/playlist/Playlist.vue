@@ -1,4 +1,5 @@
 <template>
+  <div class="mt-5">
   <ContentLoader v-slot :loading="playlist == null">
     <div class="d-flex justify-content-between">
       <h1>{{ playlist.name }}</h1>
@@ -16,6 +17,7 @@
       </template>
     </TrackList>
   </ContentLoader>
+  </div>
 </template>
 <script lang="ts">
   import Vue from 'vue'

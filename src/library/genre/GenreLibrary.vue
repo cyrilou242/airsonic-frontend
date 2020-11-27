@@ -1,4 +1,5 @@
 <template>
+  <div class="mt-5">
   <Tiles>
     <Tile v-for="item in items" :key="item.id"
           :image="item.image"
@@ -10,6 +11,7 @@
       </template>
     </Tile>
   </Tiles>
+  </div>
 </template>
 <script lang="ts">
   import Vue from 'vue'
