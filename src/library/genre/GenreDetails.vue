@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-5">
     <h1>{{ id }}</h1>
     <ul class="nav-underlined">
       <li>
