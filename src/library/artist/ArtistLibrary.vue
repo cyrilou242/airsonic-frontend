@@ -1,5 +1,7 @@
 <template>
+  <div class="mt-5">
   <ArtistList :items="items" />
+  </div>
 </template>
 <script lang="ts">
   import Vue from 'vue'
