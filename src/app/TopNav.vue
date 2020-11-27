@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex align-items-center mb-2">
+  <div class="d-flex align-items-center mb-2 fixed-top">
     <button class="navbar-toggler text-white d-md-none" @click="showMenu">
       <Icon icon="list" />
     </button>
