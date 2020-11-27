@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar-container elevated">
-    <div class="sidebar-fixed d-none d-md-block sticky-top">
+    <div class="sidebar-fixed d-none d-md-block sticky-top overflow-auto vh-100">
       <Nav />
     </div>
     <b-sidebar
