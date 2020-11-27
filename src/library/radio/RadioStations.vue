@@ -1,5 +1,5 @@
 <template>
-  <div v-if="items">
+  <div class="mt-5" v-if="items">
     <h1>Radio</h1>
     <table class="table table-hover table-borderless">
       <thead>

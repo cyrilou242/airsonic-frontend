@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!loading">
+  <div class="mt-5" v-if="!loading">
     <div v-for="section in sections" :key="section.key" class="mb-4">
       <template v-if="result[section.key].length > 0">
         <h1>
