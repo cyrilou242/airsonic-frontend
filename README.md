@@ -1,8 +1,13 @@
-# Airsonic Web Client
-
-[![](https://github.com/tamland/airsonic-frontend/workflows/CI/badge.svg)](https://github.com/tamland/airsonic-frontend/actions)
+# Airsonic/Subsonic Web Client
+This is a fork of the [airsonic web client project](https://github.com/tamland/airsonic-frontend).
+[![](https://github.com/cyrilou242/airsonic-frontend/workflows/CI/badge.svg)](https://github.com/cyrilou242/airsonic-frontend/actions)
 
 Modern responsive web frontend for [Airsonic](https://github.com/airsonic/airsonic). It's currently based on the [Subsonic API](http://www.subsonic.org/pages/api.jsp) and should work with other backends implementing this API as well.
+
+### Additions in this  fork 
+- feedback when dragging track into playlist
+- floating search bar
+- sticky side bar   
 
 ![Screenshot](screenshots/album.png)
 
@@ -34,6 +39,7 @@ You can use the URL and credentials for your own server if you prefer. **Note**:
 ## Install
 
 ### Docker
+You can install the original project with Docker:  
 
 ```
 $ docker run -d -p 8080:80 tamland/airsonic-frontend:latest
@@ -47,8 +53,8 @@ Environment variables:
 
 ### Pre-built bundle
 
-Pre-built bundles can be found in the [Actions](https://github.com/tamland/airsonic-frontend/actions)
-tab. Download/extract artifact and serve with any web server such as nginx or apache.
+Pre-built bundles can be found in the [Actions](https://github.com/cyrilou242/airsonic-frontend/actions)
+tab. Download/extract artifact and serve with your favourite web server.
 
 ### Build from source
 
