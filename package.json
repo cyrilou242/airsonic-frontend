@@ -1,6 +1,6 @@
 {
-  "name": "airsonic",
-  "version": "0.0.0",
+  "name": "aurial2",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
