@@ -1,6 +1,6 @@
 <template>
   <div class="mt-5">
-  <ArtistList :items="items" />
+    <ArtistList :items="items" />
   </div>
 </template>
 <script lang="ts">

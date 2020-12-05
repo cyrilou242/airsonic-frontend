@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5" v-if="album">
+  <div v-if="album" class="mt-5">
     <div class="d-flex mb-3">
       <div class="mr-3 mr-md-4 image-container">
         <img v-if="album.image" class="img-fluid" height="300" width="300" :src="album.image">

@@ -1,22 +1,22 @@
 <template>
   <div class="mt-5">
-  <ContentLoader v-slot :loading="playlist == null">
-    <div class="d-flex justify-content-between">
-      <h1>{{ playlist.name }}</h1>
-      <OverflowMenu>
-        <b-dropdown-item-btn variant="danger" @click="deletePlaylist()">
-          Delete playlist
-        </b-dropdown-item-btn>
-      </OverflowMenu>
-    </div>
-    <TrackList :tracks="playlist.tracks" @remove="remove(index)">
-      <template #context-menu="{index}">
-        <b-dropdown-item-button @click="remove(index)">
-          Remove
-        </b-dropdown-item-button>
-      </template>
-    </TrackList>
-  </ContentLoader>
+    <ContentLoader v-slot :loading="playlist == null">
+      <div class="d-flex justify-content-between">
+        <h1>{{ playlist.name }}</h1>
+        <OverflowMenu>
+          <b-dropdown-item-btn variant="danger" @click="deletePlaylist()">
+            Delete playlist
+          </b-dropdown-item-btn>
+        </OverflowMenu>
+      </div>
+      <TrackList :tracks="playlist.tracks" @remove="remove(index)">
+        <template #context-menu="{index}">
+          <b-dropdown-item-button @click="remove(index)">
+            Remove
+          </b-dropdown-item-button>
+        </template>
+      </TrackList>
+    </ContentLoader>
   </div>
 </template>
 <script lang="ts">

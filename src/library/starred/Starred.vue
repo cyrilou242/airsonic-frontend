@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5" v-if="result">
+  <div v-if="result" class="mt-5">
     <div v-if="result.albums.length > 0" class="mb-4">
       <h1>Albums</h1>
       <AlbumList :items="result.albums" />
