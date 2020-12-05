@@ -3,8 +3,8 @@
   "short_name": "aurial2",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#09F",
-  "background_color": "#09F",
+  "theme_color": "#000",
+  "background_color": "#000",
   "icons": [
     {
       "src": "./icon.svg",
