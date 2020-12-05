@@ -1,7 +1,7 @@
 <template>
-  <div class="mt-5">
+  <ContentLoader v-slot :loading="items == null">
     <ArtistList :items="items" />
-  </div>
+  </ContentLoader>
 </template>
 <script lang="ts">
   import Vue from 'vue'
@@ -14,7 +14,7 @@
     },
     data() {
       return {
-        items: [] as Artist[]
+        items: null as null | Artist[]
       }
     },
     created() {
