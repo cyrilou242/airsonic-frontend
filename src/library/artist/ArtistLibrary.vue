@@ -1,7 +1,9 @@
 <template>
+<div class="mt-5">
   <ContentLoader v-slot :loading="items == null">
     <ArtistList :items="items" />
   </ContentLoader>
+</div>
 </template>
 <script lang="ts">
   import Vue from 'vue'

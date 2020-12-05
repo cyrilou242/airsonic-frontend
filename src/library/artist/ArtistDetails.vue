@@ -1,4 +1,5 @@
 <template>
+<div class="mt-5">
   <ContentLoader v-slot :loading="item == null">
     <div class="row">
       <div class="col col-xl-8">
@@ -27,6 +28,7 @@
       <ArtistList :items="item.similarArtist" />
     </template>
   </ContentLoader>
+</div>
 </template>
 <script lang="ts">
   import Vue from 'vue'
