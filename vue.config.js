@@ -10,7 +10,7 @@ module.exports = {
     workboxOptions: {
       maximumFileSizeToCacheInBytes: 1073741824,
       runtimeCaching: [{
-        // Match any vover request
+        // Match any cover request
         urlPattern: /https:\/\/music\.catheu\.tech\/rest\/getCoverArt/,
         // Apply a cache-first strategy.
         handler: 'CacheFirst',
@@ -24,7 +24,7 @@ module.exports = {
         }
       },
       {
-      // Match any request that ends with .png, .jpg, .jpeg or .svg.
+      // Match lists requests
         urlPattern: /https:\/\/music\.catheu\.tech\/rest\/getAlbumList2/,
         // Apply a cache-first strategy.
         handler: 'NetworkFirst',
@@ -39,7 +39,7 @@ module.exports = {
       }
       ]
     },
-    name: 'Aurial2',
+    name: 'aurial2',
     themeColor: '#000000',
     msTileColor: '#000000',
     appleMobileWebAppCapable: 'yes',
