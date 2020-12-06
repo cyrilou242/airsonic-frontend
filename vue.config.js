@@ -10,30 +10,42 @@ module.exports = {
     workboxOptions: {
       exclude: ['_redirects', /css\/app\..*\.css\.map/],
       runtimeCaching: [{
-        // Match any cover request
+        // Cover request
+        // not working due to response format
         urlPattern: /https:\/\/music\.catheu\.tech\/rest\/getCoverArt/,
         // Apply a cache-first strategy.
         handler: 'CacheFirst',
         options: {
           // Use a custom cache name.
           cacheName: 'images',
-          // Only cache 1(0 images.
+          // Only cache 150 images.
           expiration: {
             maxEntries: 150,
           }
         }
       },
       {
-      // Match lists requests
-        urlPattern: /https:\/\/music\.catheu\.tech\/rest\/getAlbumList2/,
-        // Apply a cache-first strategy.
+      // Lists requests
+        urlPattern: /https:\/\/music\.catheu\.tech\/rest\/(getAlbumList2)/,
+        handler: 'NetworkFirst',
+        options: {
+          cacheName: 'albums_lists',
+          // Only cache 50 lists.
+          expiration: {
+            maxEntries: 50,
+          }
+        }
+      },
+      {
+      // Connection cache
+        urlPattern: /https:\/\/music\.catheu\.tech\/rest\/(ping.view)/,
         handler: 'NetworkFirst',
         options: {
           // Use a custom cache name.
           cacheName: 'albums_lists',
-          // Only cache 10 albums lists.
+          // Only cache 3 connections
           expiration: {
-            maxEntries: 10,
+            maxEntries: 3,
           }
         }
       }
