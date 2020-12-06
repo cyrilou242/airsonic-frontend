@@ -8,7 +8,6 @@ module.exports = {
   pwa: {
     workboxPluginMode: 'GenerateSW',
     workboxOptions: {
-      maximumFileSizeToCacheInBytes: 1073741824,
       runtimeCaching: [{
         // Match any cover request
         urlPattern: /https:\/\/music\.catheu\.tech\/rest\/getCoverArt/,

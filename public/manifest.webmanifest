@@ -2,7 +2,7 @@
   "name": "aurial2",
   "short_name": "aurial2",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "/login",
   "display": "standalone",
   "theme_color": "#000",
   "background_color": "#000",
