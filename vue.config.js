@@ -8,7 +8,7 @@ module.exports = {
   pwa: {
     workboxPluginMode: 'GenerateSW',
     workboxOptions: {
-      exclude: ['_redirects'],
+      exclude: ['_redirects', /css\/app\..*\.css\.map/],
       runtimeCaching: [{
         // Match any cover request
         urlPattern: /https:\/\/music\.catheu\.tech\/rest\/getCoverArt/,
