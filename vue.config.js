@@ -11,28 +11,51 @@ module.exports = {
       exclude: ['_redirects', /css\/app\..*\.css\.map/],
       runtimeCaching: [{
         // Cover request
-        // not working due to response format
         urlPattern: /https:\/\/music\.catheu\.tech\/rest\/getCoverArt/,
-        // Apply a cache-first strategy.
         handler: 'CacheFirst',
         options: {
           // Use a custom cache name.
           cacheName: 'images',
-          // Only cache 150 images.
+          // Only cache 300 images.
           expiration: {
-            maxEntries: 150,
+            maxEntries: 300,
+          }
+        }
+      },
+      {
+        // Music request
+        urlPattern: /https:\/\/music\.catheu\.tech\/rest\/stream/,
+        handler: 'CacheFirst',
+        options: {
+          // Use a custom cache name.
+          cacheName: 'musics',
+          // Only cache 500 musics.
+          expiration: {
+            maxEntries: 500,
           }
         }
       },
       {
       // Lists requests
-        urlPattern: /https:\/\/music\.catheu\.tech\/rest\/(getAlbumList2)/,
+        urlPattern: /https:\/\/music\.catheu\.tech\/rest\/(getAlbumList2|getArtists|getPlaylists|getGenres|getStarred2|getRandomSongs)/,
         handler: 'NetworkFirst',
         options: {
-          cacheName: 'albums_lists',
-          // Only cache 50 lists.
+          cacheName: 'lists',
+          // Only cache 200 lists.
           expiration: {
-            maxEntries: 50,
+            maxEntries: 200,
+          }
+        }
+      },
+      {
+      // Info requests
+        urlPattern: /https:\/\/music\.catheu\.tech\/rest\/(getAlbum|getArtist|getArtistInfo2|)/,
+        handler: 'NetworkFirst',
+        options: {
+          cacheName: 'infos',
+          // Only cache 200 lists.
+          expiration: {
+            maxEntries: 200,
           }
         }
       },
@@ -42,7 +65,7 @@ module.exports = {
         handler: 'NetworkFirst',
         options: {
           // Use a custom cache name.
-          cacheName: 'albums_lists',
+          cacheName: 'connection',
           // Only cache 3 connections
           expiration: {
             maxEntries: 3,
