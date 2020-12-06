@@ -9,6 +9,7 @@ import { setupStore } from '@/shared/store'
 import { API } from '@/shared/api'
 import { AuthService } from '@/auth/service'
 import { setupAudio } from './player/store'
+import './registerServiceWorker'
 
 declare module 'vue/types/vue' {
   interface Vue {
