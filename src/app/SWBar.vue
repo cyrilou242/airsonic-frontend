@@ -5,7 +5,7 @@
     :show="swMessage != null"
     dismissible
     @dismissed="clearSwRefresh">
-    <template v-if="swMessage != null" >
+    <template v-if="swMessage != null">
       <strong>{{ swMessage }}</strong><br>
     </template>
   </b-alert>
