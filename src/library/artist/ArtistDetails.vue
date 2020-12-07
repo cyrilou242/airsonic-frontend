@@ -1,34 +1,34 @@
 <template>
-<div class="mt-5">
-  <ContentLoader v-slot :loading="item == null">
-    <div class="row">
-      <div class="col col-xl-8">
-        <h1>{{ item.name }}</h1>
-        <p>{{ item.description }}</p>
-        <ExternalLink v-if="item.lastFmUrl" :href="item.lastFmUrl" class="btn btn-secondary mr-2">
-          Last.fm
-        </ExternalLink>
-        <ExternalLink
-          v-if="item.musicBrainzUrl"
-          :href="item.musicBrainzUrl"
-          class="btn btn-secondary">
-          MusicBrainz
-        </ExternalLink>
+  <div class="mt-5">
+    <ContentLoader v-slot :loading="item == null">
+      <div class="row">
+        <div class="col col-xl-8">
+          <h1>{{ item.name }}</h1>
+          <p>{{ item.description }}</p>
+          <ExternalLink v-if="item.lastFmUrl" :href="item.lastFmUrl" class="btn btn-secondary mr-2">
+            Last.fm
+          </ExternalLink>
+          <ExternalLink
+            v-if="item.musicBrainzUrl"
+            :href="item.musicBrainzUrl"
+            class="btn btn-secondary">
+            MusicBrainz
+          </ExternalLink>
+        </div>
       </div>
-    </div>
-    <h3 class="pt-5">
-      Albums
-    </h3>
-    <AlbumList :items="item.albums" />
-
-    <template v-if="item.similarArtist.length > 0">
       <h3 class="pt-5">
-        Similar artists
+        Albums
       </h3>
-      <ArtistList :items="item.similarArtist" />
-    </template>
-  </ContentLoader>
-</div>
+      <AlbumList :items="item.albums" />
+
+      <template v-if="item.similarArtist.length > 0">
+        <h3 class="pt-5">
+          Similar artists
+        </h3>
+        <ArtistList :items="item.similarArtist" />
+      </template>
+    </ContentLoader>
+  </div>
 </template>
 <script lang="ts">
   import Vue from 'vue'

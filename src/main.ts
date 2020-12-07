@@ -9,7 +9,7 @@ import { setupStore } from '@/shared/store'
 import { API } from '@/shared/api'
 import { AuthService } from '@/auth/service'
 import { setupAudio } from './player/store'
-import './registerServiceWorker'
+import { setupServiceWorker } from './registerServiceWorker'
 
 declare module 'vue/types/vue' {
   interface Vue {
@@ -27,6 +27,7 @@ const api = new API(authService)
 const router = setupRouter(authService)
 const store = setupStore(authService, api)
 setupAudio(store, api)
+setupServiceWorker(store)
 
 Vue.prototype.$auth = authService
 Vue.prototype.$api = api

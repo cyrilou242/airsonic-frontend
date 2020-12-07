@@ -11,6 +11,8 @@ interface State {
   showMenu: boolean;
   error: Error | null;
   playlists: any[];
+  swRefresh: boolean | null;
+  swMessage: null | string;
 }
 
 const setupRootModule = (authService: AuthService, api: API): Module<State, any> => ({
@@ -21,6 +23,8 @@ const setupRootModule = (authService: AuthService, api: API): Module<State, any>
     showMenu: false,
     error: null,
     playlists: [],
+    swRefresh: null,
+    swMessage: null,
   },
   mutations: {
     setError(state, error) {
@@ -28,6 +32,13 @@ const setupRootModule = (authService: AuthService, api: API): Module<State, any>
     },
     clearError(state) {
       state.error = null
+    },
+    setSwRefresh(state, message) {
+      state.swMessage = message
+      state.swRefresh = true
+    },
+    clearSwRefresh(state) {
+      state.swRefresh = null
     },
     setLoginSuccess(state, { username, server }) {
       state.isLoggedIn = true
