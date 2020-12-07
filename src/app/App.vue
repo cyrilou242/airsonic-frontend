@@ -7,6 +7,7 @@
         <router-view />
       </main>
     </div>
+    <SWBar />
     <ErrorBar />
     <Player />
   </div>
@@ -19,6 +20,7 @@
 
 </style>
 <script lang="ts">
+  import SWBar from './SWBar.vue'
   import ErrorBar from './ErrorBar.vue'
   import TopNav from './TopNav.vue'
   import Sidebar from './Sidebar.vue'
@@ -26,6 +28,7 @@
 
   export default {
     components: {
+      SWBar,
       ErrorBar,
       TopNav,
       Sidebar,
