@@ -15,7 +15,6 @@ export function setupServiceWorker(store: Store<any>) {
       registered() {
         // service worker caching properly
         console.log('Service worker has been registered.')
-        store.commit('setSwRefresh', 'Service worker has been registered. Please refresh to enable caching and offline mode.')
       },
       cached() {
         console.log('Content has been cached for offline use.')

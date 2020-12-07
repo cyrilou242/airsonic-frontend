@@ -8,6 +8,7 @@ module.exports = {
   pwa: {
     workboxPluginMode: 'GenerateSW',
     workboxOptions: {
+      clientsClaim: true,
       skipWaiting: true,
       exclude: ['_redirects', /css\/app\..*\.css\.map/],
       runtimeCaching: [{
